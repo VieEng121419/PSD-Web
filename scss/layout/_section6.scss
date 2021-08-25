@@ -1,0 +1,121 @@
+@import "../abstracts/variable";
+@import "../abstracts/mixin";
+#section__6 {
+    overflow-x: auto;
+    ul {
+        list-style: none;
+        text-align: center;
+    }
+    .filter__menu {
+        margin-bottom: 40px;
+        //responsive
+        @include respond(largeMobile) {
+            display: inline-grid;
+            grid-template-columns: auto auto;
+            justify-content: space-around;
+        }
+        li {
+            display: inline-block;
+            color: #a4a4a4;
+            margin: 0 30px;
+            cursor: pointer;
+            line-height: 42px;
+            font: {
+                family: "Source Sans Pro", sans-serif;
+                size: 15px;
+                weight: normal;
+            }
+            //responsive
+            @include respond(largeTablet) {
+                margin: 0 29px;
+            }
+            @include respond(largeMobile) {
+            }
+        }
+        li.active {
+            color: #202020;
+            border-bottom: 1px solid #010101;
+        }
+    }
+    .filter__item {
+        //resposive
+        @include respond(largeTablet) {
+            margin-left: -9px;
+        }
+        @include respond(largeMobile) {
+            margin-left: -5px;
+        }
+        @include respond(mobile) {
+            margin-left: -5px;
+        }
+        li {
+            width: 25%;
+            height: 300px;
+            padding: 10px;
+            float: left;
+            overflow: hidden;
+            img {
+                display: block;
+                width: 150%;
+                height: auto;
+                //responsive
+                @include respond(largeMobile) {
+                    width: 150%;
+                    height: 170px;
+                }
+                @include respond(mobile) {
+                    width: 150%;
+                    height: auto;
+                }
+            }
+            //responsive
+            @include respond(des) {
+                height: 228.5px;
+            }
+            @include respond(smallDes) {
+                height: 190px;
+            }
+            @include respond(largeTablet) {
+                height: 164.5px;
+            }
+            @include respond(largeMobile) {
+                width: 192.2px;
+                height: 190px;
+            }
+            @include respond(mobile) {
+                width: 167.2px;
+                height: 150px;
+            }
+        }
+        li.active {
+            width: 25%;
+            height: 300px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            //responsive
+            @include respond(des) {
+                height: 228.5px;
+            }
+            @include respond(smallDes) {
+                height: 190px;
+            }
+            @include respond(largeTablet) {
+                height: 164.5px;
+            }
+            @include respond(largeMobile) {
+                width: 192.2px;
+                height: 190px;
+            }
+            @include respond(mobile) {
+                width: 167.2px;
+                height: 150px;
+            }
+        }
+        li.delete {
+            width: 0%;
+            height: 0;
+            padding: 0;
+            transition: all 0.5s ease;
+        }
+    }
+}

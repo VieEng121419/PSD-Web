@@ -1,0 +1,60 @@
+@import "../abstracts/variable";
+@import "../abstracts/mixin";
+@import "../base/animate";
+.button {
+    padding: 11px 44px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    line-height: 0;
+    text-decoration: none;
+    color: #fff;
+    line-height: 0;
+    //responsive
+    @include respond(largeTablet) {
+        padding: 9px 40px;
+        span {
+            font-size: 14px;
+        }
+    }
+    @include respond(tablet) {
+        padding: 9px 40px;
+        span {
+            font-size: 14px;
+        }
+    }
+    @include respond(largeMobile) {
+        padding: 9px 40px;
+        span {
+            font-size: 14px;
+        }
+    }
+    @include respond(mobile) {
+        padding: 9px 40px;
+        span {
+            font-size: 14px;
+        }
+    }
+}
+.button#{$slide-active} {
+    @include border-color($slide-active);
+}
+.button#{$slide} {
+    @include border-color($slide);
+    @include animation-button($slide);
+}
+.button#{$banner} {
+    @include border-color($banner);
+    @include animation-button($banner);
+}
+.button#{$footer} {
+    @include border-color($footer);
+    @include animation-button($footer);
+}
+.button#{$form} {
+    @include border-color($form);
+}

@@ -1,0 +1,110 @@
+.feature {
+    color: #ffff;
+    padding: 48px;
+    //responsive
+    @include respond(smallDes) {
+        padding: 80px;
+    }
+    @include respond(mobile){
+        padding: 48px;
+    }
+    img {
+        height: auto;
+        width: auto;
+        max-width: 66px;
+        max-height: 66px;
+        //responsive
+        @include respond(des) {
+            max-width: 50px;
+            max-height: 50px;
+        }
+        @include respond(smallDes) {
+            max-width: 80px;
+            max-height: 80px;
+        }
+        @include respond(largeMobile) {
+            max-width: 60px;
+            max-height: 60px;
+        }
+    }
+    &__title {
+        padding: 33px 0px;
+        margin-bottom: 0;
+        font: {
+            family: "Roboto", sans-serif;
+            size: 17px;
+            weight: bold;
+        }
+        //responsive
+        @include respond(des) {
+            padding: 30px 0px;
+            margin-bottom: 0;
+            font: {
+                family: "Roboto", sans-serif;
+                size: 14px;
+                weight: bold;
+            }
+        }
+        @include respond(smallDes) {
+            padding: 33px 0px;
+            margin-bottom: 0;
+            font: {
+                family: "Roboto", sans-serif;
+                size: 23px;
+                weight: bold;
+            }
+        }
+        @include respond(largeMobile) {
+            padding: 30px 0px;
+            margin-bottom: 0;
+            font: {
+                family: "Roboto", sans-serif;
+                size: 17px;
+                weight: bold;
+            }
+        }
+    }
+    &__middle {
+        width: 51px;
+        height: 3px;
+        background-color: #ffff;
+        //responsive
+        @include respond(smallDes) {
+            width: 80px;
+            height: 4px;
+        }
+        @include respond(largeMobile) {
+            width: 80px;
+            height: 2px;
+        }
+    }
+    &__content {
+        padding: 33px 0px;
+        font: {
+            size: 13px;
+            weight: normal;
+        }
+        //resposive
+        @include respond(des) {
+            padding: 30px 0px;
+            font: {
+                size: 10px;
+                weight: normal;
+            }
+        }
+        @include respond(smallDes) {
+            padding: 33px 0px;
+            font: {
+                size: 15px;
+                weight: normal;
+            }
+        }
+        @include respond(largeMobile) {
+            padding: 30px 0px;
+            font: {
+                size: 12px;
+                weight: normal;
+            }
+        }
+    }
+}

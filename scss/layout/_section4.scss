@@ -1,0 +1,98 @@
+@import "../abstracts/variable";
+@import "../abstracts/mixin";
+#section__4 {
+    @import "../components/banner-dark";
+    .banner__text {
+        padding: 90px 0;
+        @include respond(largeMobile){
+            padding-top: 0;
+            padding-bottom: 50px;
+        }
+        &--title {
+            color: #ffff;
+            margin-bottom: 40px;
+            font: {
+                family: "Source Sans Pro", sans-serif;
+                size: 40px;
+                weight: bold;
+            }
+            //responsive
+            @include respond(des) {
+                font-size: 35px;
+            }
+            @include respond(smallDes) {
+                font-size: 27px;
+            }
+            @include respond(largeMobile) {
+                text-align: center;
+            }
+        }
+        &--content {
+            color: #ffff;
+            margin-bottom: 55px;
+            font: {
+                size: 13.5px;
+            }
+            //responsive
+            @include respond(des) {
+                font-size: 12.5px;
+            }
+            @include respond(smallDes) {
+                margin-bottom: 30px;
+                font-size: 12px;
+            }
+            @include respond(largeMobile) {
+                text-align: center;
+            }
+        }
+        &--button{
+            @include respond(largeMobile){
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+    .banner__img {
+        display: flex;
+        padding: 90px 0;
+        @include respond(des) {
+            padding: 60px 0;
+        }
+        @include respond(largeMobile){
+            padding: 0;
+        }
+        &--item-1 {
+            //banner-img(index, url, height, size, position, margin-left)
+            @include banner-img(1, "../../images/banner4.jpg", 370px, 370px, right, 30px);
+            @include respond(des) {
+                @include banner-img(1, "../../images/banner4.jpg",370px, 327px, right, 30px);
+            }
+            @include respond(smallDes) {
+                @include banner-img(1, "../../images/banner4.jpg",370px, 308px, right, 30px);
+            }
+            @include respond(largeMobile) {
+                @include banner-img(1, "../../images/banner4.jpg",370px, 265px, right, 30px);
+            }
+            @include respond(mobile) {
+                @include banner-img(1, "../../images/banner4.jpg",325px, 215px, right, 30px);
+            }
+        }
+        &--item-2 {
+           //banner-img(index, url, height, size, position, margin-left)
+            @include banner-img(2, "../../images/banner5.jpg",370px, 370px, left, 30px);
+            //responsive
+            @include respond(des){
+                @include banner-img(2, "../../images/banner5.jpg",370px, 327px, left, 30px);
+            }
+            @include respond(smallDes){
+                @include banner-img(2, "../../images/banner5.jpg",370px, 308px, left, 30px);
+            }
+            @include respond(largeMobile){
+                @include banner-img(2, "../../images/banner5.jpg",370px, 265px, left, 30px);
+            }
+            @include respond(mobile){
+                @include banner-img(2, "../../images/banner5.jpg",325px, 215px, left, 30px);
+            }
+        }
+    }
+}

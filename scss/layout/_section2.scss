@@ -1,0 +1,67 @@
+@import "../abstracts/variable";
+@import "../abstracts/mixin";
+#section__2 {
+    margin-bottom: 35px;
+    .container {
+        .features {
+            display: grid;
+            grid: {
+                template: {
+                    columns: $features-w-h $features-w-h $features-w-h;
+                    rows: $features-w-h;
+                }
+                column-gap: 20px;
+            }
+            position: relative;
+            transform: translateY(-85px);
+            max-width: 100%;
+            overflow: hidden;
+            @import "../components/features";
+            .feature#{$features-active} {
+                @include feature__block--color($features-active);
+            }
+            .feature#{$features} {
+                @include feature__block--color($features);
+            }
+            //responsive
+            @include respond(des) {
+                width: 100%;
+                grid: {
+                    template: {
+                        columns: $features-desktop $features-desktop $features-desktop;
+                        rows: $features-desktop;
+                    }
+                    column-gap: 20px;
+                }
+                justify-content: center;
+            }
+            @include respond(smallDes) {
+                grid: {
+                    template: {
+                        columns: $features-smallDesktop;
+                        rows: $features-smallDesktop $features-smallDesktop $features-smallDesktop;
+                    }
+                    gap: 20px 20px;
+                }
+            }
+            @include respond(largeMobile){
+                grid: {
+                    template: {
+                        columns: $features-largeMobile;
+                        rows: $features-largeMobile $features-largeMobile $features-largeMobile;
+                    }
+                    gap: 20px 20px;
+                }
+            }
+            @include respond(mobile){
+                grid: {
+                    template: {
+                        columns: $features-mobile;
+                        rows: $features-mobile $features-mobile $features-mobile;
+                    }
+                    gap: 20px 20px;
+                }
+            }
+        }
+    }
+}

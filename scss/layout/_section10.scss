@@ -1,0 +1,90 @@
+@import "../abstracts/variable";
+@import "../abstracts/mixin";
+#section__10{
+    padding: 90px 0;
+    .banner__text{
+        margin-right: 10%;
+        &--title{
+            font: {
+                family: "Source Sans Pro", sans-serif;
+                size: 50px;
+                weight: bold;
+            }
+            text-align: right;
+            vertical-align: top;
+            @include respond(des){
+                font-size: 43px;
+            }
+            @include respond(smallDes){
+                font-size: 31px;
+            }
+        }
+        &--content{
+            color: #838383;
+            margin-bottom: 30px;
+            text-align: right;
+            font: {
+                size: 13.5px;
+            }
+        }
+    }
+    .form__service{
+        width: 100%;
+        margin-top: 20px;
+        input, select,textarea{
+            padding: 11px;
+            margin-bottom: 15px;
+            border: 1px solid #000;
+            outline: none;
+            width: 100%;
+        }
+        select{
+            padding: 15px 8px;
+            font: {
+                family: "Rotobo", sans-serif;
+                size: 13px;
+            }
+        }
+        input:nth-child(2){
+            padding: 11px;
+            display: inline;
+            float: left;
+            width: calc(50% - 15px);
+            margin-right: 15px;
+        }
+        input:nth-child(3){
+            padding: 11px;
+            display: inline;
+            width: 50%;
+        }
+        ::-webkit-input-placeholder { /* Edge */
+            color: #000;
+            opacity: 1;
+            font: {
+                family: "Rotobo", sans-serif;
+                size: 13px;
+            }
+          }
+          
+          :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #000;
+            opacity: 1;
+            font: {
+                family: "Rotobo", sans-serif;
+                size: 13px;
+            }
+          }
+          
+          ::placeholder {
+            color: #000;
+            opacity: 1;
+            font: {
+                family: "Rotobo", sans-serif;
+                size: 13px;
+            }
+          }
+    }
+    .form__button{
+        margin-top: 10px;
+    }
+}

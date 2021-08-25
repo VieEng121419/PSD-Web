@@ -1,0 +1,190 @@
+@import "../abstracts/variable";
+@import "../abstracts/mixin";
+footer {
+    @import "../components/banner-dark";
+    .footer__1 {
+        padding-top: 80px;
+        .logo-container{
+            @include respond(smallDes){
+                text-align: center;
+            }
+            a{
+                img{
+                    @include respond(smallDes){
+                        width: 20%;
+                    }
+                    @include respond(largeMobile){
+                        width: 35%;
+                    }
+                }
+            }
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            //responsive
+            @include respond(des) {
+                justify-content: flex-end;
+            }
+            @include respond(smallDes) {
+                flex-direction: column;
+                margin-top: 50px;
+            }
+            li:first-child {
+                border-bottom: 2px solid $color-main;
+            }
+            li:not(:first-child) {
+                margin-left: 50px;
+                //responsive
+                @include respond(smallDes) {
+                    margin-left: 0;
+                }
+            }
+            li {
+                list-style: none;
+                flex-shrink: 0;
+                a {
+                    font: {
+                        family: "Roboto", sans-serif;
+                        size: 13px;
+                        weight: bold;
+                    }
+                    text-decoration: none;
+                    color: #ffff;
+                    transition: all 0.3s ease;
+                    //responsive
+                    @include respond(smallDes) {
+                        font-size: 16px;
+                    }
+                }
+                //resposive
+                @include respond(smallDes) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    .footer__2 {
+        margin-top: 90px;
+        @include respond(smallDes){
+            margin-top: 50px;
+        }
+        &--contact {
+            .contact {
+                color: #ffff;
+                font-family: "Roboto", sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                //responsive
+                @include respond(smallDes){
+                    font-size: 14px;
+                }
+                @include respond(largeMobile){
+                    text-align: center;
+                }
+            }
+        }
+        &--address {
+            .address {
+                color: #eaeaeb;
+                font: {
+                    family: "Roboto", sans-serif;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+                //responsive
+                @include respond(smallDes){
+                    font-size: 14px;
+                }
+                @include respond(largeMobile){
+                    text-align: center;
+                }
+            }
+        }
+        &--subscrible-title {
+            color: #ffff;
+            font-family: "Roboto", sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: right;
+            //responsive
+            @include respond(smallDes){
+                text-align: right;
+            }
+            @include respond(largeMobile){
+                text-align: center;
+            }
+        }
+        &--subscrible-input {
+            width: 100%;
+            .formFooter {
+                width: 100%;
+                input {
+                    width: 80%;
+                    border: none;
+                    outline: none;
+                    padding: 7px;
+                    float: left;
+                }
+                ::-webkit-input-placeholder {
+                    /* Edge */
+                    font: {
+                        family: "Rotobo", sans-serif;
+                        size: 13px;
+                    }
+                }
+                :-ms-input-placeholder {
+                    /* Internet Explorer 10-11 */
+                    font: {
+                        family: "Rotobo", sans-serif;
+                        size: 13px;
+                    }
+                }
+                ::placeholder {
+                    font: {
+                        family: "Rotobo", sans-serif;
+                        size: 13px;
+                    }
+                }
+                .button__form--footer {
+                    width: 20%;
+                    border: none;
+                    background: $color-main;
+                    color: #ffff;
+                    padding: 7px;
+                }
+            }
+        }
+    }
+    .footer__3 {
+        margin-top: 70px;
+        padding-bottom: 40px;
+        .img-container{
+            img {
+                width: 15px;
+                height: auto;
+            }
+            img:not(:first-child) {
+                margin-left: 20px;
+            }
+            //responisve
+            @include respond(largeMobile){
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+        &--copyright {
+            color: #515b5d;
+            font-size: 13px;
+            text-align: right;
+            //responsive
+            @include respond(smallDes){
+                font-size: 12px;
+            }
+            @include respond(largeMobile){
+                text-align: center;
+            }
+        }
+    }
+}

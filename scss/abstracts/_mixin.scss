@@ -1,0 +1,186 @@
+@import "../abstracts/variable";
+@import "../base/animate";
+//CLEARFIX
+@mixin clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+//BUTTONS
+@mixin border-color($pos) {
+    @if $pos == $slide {
+        background-color: transparent;
+        color: #ededed;
+        border: 2px solid $color-main;
+    } @else if $pos == $slide-active {
+        background-color: $color-main;
+        color: #fff;
+        border: 2px solid $color-main;
+        margin-right: 30px;
+        padding: 11px 54px;
+        //responsive
+        @include respond(des) {
+            padding: 11px 54px;
+        }
+        @include respond(smallDes) {
+            padding: 11px 54px;
+        }
+        @include respond(largeTablet) {
+            padding: 9px 48px;
+        }
+        @include respond(tablet) {
+            margin-right: 0;
+            margin-bottom: 5px;
+            padding: 9px 40px;
+        }
+        @include respond(largeMobile) {
+            margin-right: 0;
+            margin-bottom: 5px;
+            padding: 9px 49px;
+        }
+        @include respond(mobile) {
+            margin-right: 0;
+            margin-bottom: 5px;
+            padding: 9px 49px;
+        }
+    } @else if $pos == $banner {
+        background-color: transparent;
+        color: #ffff;
+        border: 2px solid #ffff;
+        //responsive
+        @include respond(des) {
+            padding: 11px 54px;
+        }
+        @include respond(smallDes) {
+            padding: 11px 54px;
+        }
+        @include respond(largeTablet) {
+            padding: 11px 48px;
+        }
+        @include respond(tablet) {
+            margin-right: 0;
+            margin-bottom: 5px;
+            padding: 20px 48px;
+        }
+        @include respond(largeMobile) {
+            margin-right: 0;
+            margin-bottom: 5px;
+            padding: 20px 48px;
+        }
+        @include respond(mobile) {
+            margin-right: 0;
+            margin-bottom: 5px;
+            padding: 20px 48px;
+        }
+    } @else if $pos == $footer {
+        background-color: transparent;
+        color: #1f1f1f;
+        border: 2px solid #1f1f1f;
+        //responsive
+        @include respond(des) {
+            padding: 11px 54px;
+        }
+        @include respond(smallDes) {
+            padding: 11px 54px;
+        }
+        @include respond(largeTablet) {
+            padding: 12px 48px;
+        }
+        @include respond(tablet) {
+            margin-right: 0;
+            margin-bottom: 5px;
+            padding: 12px 40px;
+        }
+        @include respond(largeMobile) {
+            margin-right: 0;
+            margin-bottom: 5px;
+            padding: 12px 40px;
+        }
+        @include respond(mobile) {
+            margin-right: 0;
+            margin-bottom: 5px;
+            padding: 12px 40px;
+        }
+    } @else if $pos == $form {
+        background-color: $color-main;
+        color: #ffff;
+        border: 2px solid $color-main;
+        width: 100%;
+        height: 50px;
+    }
+}
+//FEATURES
+@mixin feature__block--color($sta) {
+    @if $sta == $features-active {
+        background-color: $color-main;
+    } @else if $sta == $features {
+        background-color: $color-second;
+    }
+}
+//SERVICES
+@mixin banner-img($ind, $url, $height, $size, $pos, $mg-l) {
+    @if $ind == 1 {
+        width: 255px;
+        height: $height;
+        background-image: url($url);
+        background-repeat: no-repeat;
+        background-size: auto $size;
+        background-position: $pos;
+    } @else if $ind == 2 {
+        width: 255px;
+        height: $height;
+        background-image: url($url);
+        background-repeat: no-repeat;
+        background-size: auto $size;
+        background-position: $pos;
+        margin-left: $mg-l;
+    }
+}
+//RESPONSIVE
+@mixin respond($media) {
+    @if $media == largeDes {
+        @media only screen and (min-width: $large-desktop) {
+            @content;
+        }
+    }
+    @if $media == des {
+        @media only screen and (max-width: $desktop) {
+            @content;
+        }
+    }
+    @if $media == smallDes {
+        @media only screen and (max-width: $small-desktop) {
+            @content;
+        }
+    }
+    @if $media == largeTablet {
+        @media only screen and (max-width: $large-tablet) {
+            @content;
+        }
+    }
+    @if $media == tablet {
+        @media only screen and (max-width: $tablet) {
+            @content;
+        }
+    }
+    @if $media == largeMobile {
+        @media only screen and (max-width: $large-mobile) {
+            @content;
+        }
+    }
+    @if $media == mobile {
+        @media only screen and (max-width: $mobile) and (min-width: 310px) {
+            @content;
+        }
+    }
+    @if $media == mobile-portrait {
+        @media only screen and (max-width: $mobile) and (orientation: portrait) {
+            @content;
+        }
+    }
+    @if $media == mobile-landscape {
+        @media only screen and (min-width: 320px) and (max-width: $mobile-landscape) and (orientation: landscape) {
+            @content;
+        }
+    }
+}

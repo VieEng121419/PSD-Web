@@ -1,0 +1,112 @@
+@import "../abstracts/variable";
+@import "../abstracts/mixin";
+#section__9{
+    .container-fluid{
+        .banner__light{
+            background: url(../../images/banner10.jpg) no-repeat;
+            background-size: 100%;
+            //responsive
+            @include respond(largeMobile){
+                background-size: auto;
+            }
+            .banner__text {
+                padding: 90px 0;   
+                //responsive 
+                @include respond(des){
+                    padding: 40px 16px;
+                }
+                @include respond(largeTablet){
+                    padding: 21px 16px;
+                }
+                &--title {
+                    color: #1f1f1f;
+                    margin-bottom: 40px;
+                    font: {
+                        family: "Source Sans Pro", sans-serif;
+                        size: 40px;
+                        weight: bold;
+                    }
+                    //responsive 
+                    @include respond(des){
+                        margin-bottom: 20px;
+                        font-size: 35px;
+                    }
+                    @include respond(smallDes){
+                        margin-bottom: 20px;
+                        font-size: 25px;
+                    }
+                }
+                &--content {
+                    color: #838383;
+                    margin-bottom: 55px;
+                    font: {
+                        size: 13.5px;
+                    }
+                    //responsive 
+                    @include respond(des){
+                        margin-bottom: 30px;
+                        font-size: 12px;
+                    }
+                    @include respond(smallDes){
+                        margin-bottom: 30px;
+                        font-size: 11px;
+                    }
+                }
+                &--items{
+                    display: flex;
+                    .item{
+                        flex:1 1 auto;
+                        margin:5px;
+                        img{
+                            width: 15%;
+                            height: auto;
+                            margin-bottom: 10px;
+                        }
+                        &__title{
+                            font: {
+                                family: "Source Sans Pro", sans-serif;
+                                size: 18px;
+                                weight: normal;
+                            }
+                            color: #5e5e5e;
+                        }
+                        &__content{
+                            font: {
+                                size: 14px;                      
+                            }
+                            color: #838383;
+                            //responsive
+                            @include respond(des){
+                                font-size: 12px;
+                            }
+                            @include respond(smallDes){
+                                font-size: 11px;
+                            }
+                        }
+                    }
+                }
+            }
+            .banner__img {
+                display: flex;
+                padding: 90px 0;
+                &--item-1 {
+                    width: 255px;
+                    height: 370px;
+                    background-image: url(../../images/banner4.jpg);
+                    background-repeat: no-repeat;
+                    background-size: auto 370px;
+                    background-position: right;
+                }
+                &--item-2 {
+                    width: 255px;
+                    height: 370px;
+                    background-image: url(../../images/banner5.jpg);
+                    background-repeat: no-repeat;
+                    background-size: auto 370px;
+                    background-position: left;
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+}

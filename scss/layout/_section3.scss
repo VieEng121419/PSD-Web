@@ -1,0 +1,110 @@
+@import "../abstracts/variable";
+@import "../abstracts/mixin";
+#section__3 {
+    margin-bottom: 80px;
+    .services {
+        &__text {
+            margin-bottom: 120px;
+            @include respond(largeMobile){
+                margin-bottom: 70px;
+            }
+            &--heading {
+                text-align: center;
+                color: $color-main;
+                font: {
+                    family: "Roboto", sans-serif;
+                    size: 15px;
+                    weight: bold;
+                }
+            }
+            &--title {
+                text-align: center;
+                font: {
+                    family: "Source Sans Pro", sans-serif;
+                    size: 50px;
+                    weight: bold;
+                }
+                span {
+                    color: $color-main;
+                }
+                @include respond(smallDes) {
+                    font-size: 40px;
+                }
+                @include respond(largeMobile) {
+                    font-size: 38px;
+                }
+                @include respond(mobile) {
+                    font-size: 35px;
+                }
+            }
+            &--content {
+                text-align: center;
+                color: #8d8d8d;
+                font: {
+                    size: 13.5px;
+                }
+                @include respond(smallDes) {
+                    font-size: 12.5px;
+                }
+                @include respond(largeMobile) {
+                    font-size: 11.5px;
+                    padding: 0 62px;
+                }
+                @include respond(mobile) {
+                    font-size: 11.5px;
+                    padding: 0 30px;
+                }
+            }
+        }
+        &__items {
+            display: grid;
+            grid: {
+                template: {
+                    columns: $services-w-h $services-w-h $services-w-h;
+                    rows: $services-w-h;
+                }
+                column-gap: 171px;
+                row-gap: 20px;
+            }
+            max-width: 100%;
+            overflow: hidden;
+            @import "../components/services";
+            @include respond(des) {
+                grid: {
+                    template: {
+                        columns: $services-w-h $services-w-h $services-w-h;
+                        rows: $services-w-h;
+                    }
+                    column-gap: 81px;
+                    row-gap: 20px;
+                }
+            }
+            @include respond(smallDes) {
+                grid: {
+                    template: {
+                        columns: $services-w-h $services-w-h;
+                        rows: $services-w-h $services-w-h;
+                    }
+                    column-gap: auto;
+                    row-gap: 20px;
+                }
+                align-items: center;
+                justify-items: center;
+                justify-content: space-around;
+            }
+            @include respond(largeMobile) {
+                grid: {
+                    template: {
+                        columns: $services-w-h;
+                        rows: $services-w-h $services-w-h $services-w-h;
+                    }
+                    column-gap: auto;
+                    row-gap: 20px;
+                }
+                align-items: center;
+                justify-items: center;
+                justify-content: space-around;
+            }
+        }
+    }
+}

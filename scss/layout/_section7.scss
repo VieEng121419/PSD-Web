@@ -1,0 +1,147 @@
+@import "../abstracts/variable";
+@import "../abstracts/mixin";
+#section__7 {
+    @import "../components/banner-white";
+    .banner__text {
+        padding: 90px 0;
+        @include respond(smallDes){
+            padding: {
+                top: 90px;
+                bottom: 0;
+            }
+        }
+        @include respond(largeMobile){
+            padding: {
+                top: 0;
+                bottom: 90px;
+            }
+        }
+        &--title {
+            color: #1f1f1f;
+            margin-bottom: 40px;
+            font: {
+                family: "Source Sans Pro", sans-serif;
+                size: 40px;
+                weight: bold;
+            }
+            @include respond(des){
+                margin-bottom: 18px;
+                font-size: 38px;
+            }
+            @include respond(smallDes){
+                font-size: 53px;
+            }
+            @include respond(largeTablet){
+                font-size: 43px;
+            }
+            @include respond(largeMobile){
+                font-size: 36px;
+            }
+        }
+        &--content {
+            color: #1f1f1f;
+            margin-bottom: 55px;
+            font: {
+                size: 13.5px;
+            }
+            @include respond(des){
+                font-size: 12.5px;
+                margin-bottom: 30px;
+            }
+            @include respond(smallDes){
+                font-size: 14.5px;
+            }
+        }
+    }
+    .banner__video {
+        padding: 100px 0;
+        @include respond(largeMobile){
+            padding: {
+                 top: 90px;
+                 bottom: 0;
+            }
+        }
+        &--container {
+            position: relative;
+            #banner__middle {
+                width: 100%;
+                height: 100%;
+            }
+            video {
+                width: 100%;
+                height: auto;
+            }
+            .controls {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                #player-btn {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    width: 54px;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+            #close-btn {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                width: 54px;
+                img {
+                    width: 50%;
+                    height: auto;
+                }
+                position: absolute;
+                top: 13px;
+                right: 2px;
+                display: none;
+            }
+        }
+        &--container.active{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 10;
+            #banner__middle {
+                width: 100%;
+                height: 100%;
+                background-color: #000;
+                opacity: 0.9;
+            }
+            video {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                width: 90%;
+                height: 90%;
+                z-index: 2;
+            }
+            .controls {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                #player-btn {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    width: 54px;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}

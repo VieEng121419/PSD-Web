@@ -1,0 +1,142 @@
+@import "../abstracts/variable";
+@import "../abstracts/mixin";
+#section__5 {
+    margin-bottom: 100px;
+    @import "../components/banner-light";
+    .banner {
+        display: grid;
+        grid: {
+            template: {
+                columns: auto auto;
+                rows: auto auto;
+            }
+            column-gap: 20px;
+            row-gap: 50px;
+        }
+        padding: 90px 0;
+        //responsive
+        @include respond(des) {
+            width: 100%;
+            max-width: 100%;
+            grid: {
+                template: {
+                    columns: 205px 205px;
+                    rows: auto auto;
+                }
+                column-gap: 20px;
+                row-gap: 50px;
+            }
+            align-items: center;
+            justify-items: center;
+            justify-content: space-around;
+            padding: 90px 0;
+        }
+        @include respond(smallDes) {
+            grid: {
+                template: {
+                    columns: auto auto;
+                    rows: auto auto;
+                }
+                column-gap: 20px;
+                row-gap: 50px;
+            }
+            padding-top: 0;
+            padding-bottom: 90px;
+        }
+        @include respond(largeMobile) {
+            grid: {
+                template: {
+                    columns: auto auto;
+                    rows: auto auto;
+                }
+                gap: 20px;
+            }
+            justify-content: space-around;
+            padding-top: 0;
+            padding-bottom: 90px;
+        }
+        @include respond(mobile) {
+            width: 100%;
+            max-width: 100%;
+            grid: {
+                template: {
+                    columns: 152.6px 152.6px;
+                    rows: auto auto;
+                }
+                column-gap: 20px;
+                row-gap: 50px;
+            }
+            justify-content: space-between;
+            padding-top: 0;
+            padding-bottom: 90px;
+        }
+        &__items {
+            &--title {
+                font: {
+                    family: "Source Sans Pro", sans-serif;
+                    size: 17px;
+                    weight: normal;
+                }
+                //responsive
+                @include respond(smallDes) {
+                    font-size: 15px;
+                }
+                @include respond(largeMobile) {
+                    font-size: 13px;
+                }
+            }
+            &--content {
+                color: #969696;
+                font: {
+                    size: 13.5px;
+                }
+                //responsive
+                @include respond(smallDes) {
+                    font-size: 12px;
+                    padding-right: 20px;
+                }
+                @include respond(largeMobile) {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+    .banner__text {
+        padding: 90px 0;
+        //responsive
+        @include respond(smallDes) {
+            padding-top: 90px;
+            padding-bottom: 30px;
+        }
+        &--title {
+            color: #1f1f1f;
+            margin-bottom: 30px;
+            font: {
+                family: "Source Sans Pro", sans-serif;
+                size: 40px;
+                weight: bold;
+            }
+            //responsive
+            @include respond(des) {
+                font-size: 40px;
+            }
+            @include respond(largeMobile) {
+                font-size: 30px;
+            }
+            @include respond(mobile) {
+                font-size: 26px;
+            }
+        }
+        &--content {
+            color: #969696;
+            margin-bottom: 30px;
+            font: {
+                size: 13.5px;
+            }
+            //responsive
+            @include respond(mobile) {
+                font-size: 11.5px;
+            }
+        }
+    }
+}
